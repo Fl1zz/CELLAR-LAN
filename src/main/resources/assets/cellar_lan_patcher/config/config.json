@@ -1,0 +1,35 @@
+{
+    "custom_map": {
+        "custom_map": false
+    },
+    "map": {
+        "map_id": ""
+    },
+    "load": {
+        "load": true
+    },
+    "pause_menu": {
+        "has_custom_menu": false
+    },
+    "script_name": {
+        "script_name": ""
+    },
+    "window_name": {
+        "window_name": "CELLAR"
+    },
+    "custom_icon": {
+        "custom_icon": true
+    },
+    "path": {
+        "path": "config/16x16.png"
+    },
+    "path32": {
+        "path32": "config/32x32.png"
+    },
+    "hidespectators": {
+        "hidespectators": true
+    },
+    "button_update": {
+        "button_update": {}
+    }
+}

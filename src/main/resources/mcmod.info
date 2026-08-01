@@ -1,0 +1,16 @@
+[
+{
+  "modid": "cellar_lan_patcher",
+  "name": "cellar_lan_patcher",
+  "description": "cellar_lan_patcher",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Fl1z"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

@@ -1,0 +1,7 @@
+{
+    "GlobalLibrary": 0b,
+    "Unique": 1b,
+    "Libraries": [
+        "AI/bon.js"
+    ]
+}

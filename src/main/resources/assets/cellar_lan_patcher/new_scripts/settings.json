@@ -1,0 +1,304 @@
+{
+    "Triggers": {
+        "player_item_toss": {
+            "Blocks": [
+            ]
+        },
+        "entity_death": {
+            "Blocks": [
+            ]
+        },
+        "player_keyboard": {
+            "Blocks": [
+                {
+                    "Script": "player/controls.js",
+                    "Function": "E",
+                    "Type": "script",
+                    "CustomData": "",
+                    "Frequency": 1,
+                    "Inline": 0b,
+                    "Code": ""
+                }
+            ]
+        },
+        "player_journal": {
+            "Blocks": [
+            ]
+        },
+        "player_eat": {
+            "Blocks": [
+            ]
+        },
+        "living_fall": {
+            "Blocks": [
+            ]
+        },
+        "player_dimension_change": {
+            "Blocks": [
+            ]
+        },
+        "server_tick": {
+            "Blocks": [
+                {
+                    "Script": "playerTick.js",
+                    "Function": "",
+                    "Type": "script",
+                    "CustomData": "",
+                    "Frequency": 1,
+                    "Inline": 0b,
+                    "Code": ""
+                },
+                {
+                    "Type": "command",
+                    "Command": "/mp script exec @a player/controls.js animTime",
+                    "Frequency": 1
+                },
+                {
+                    "Script": "player/controls.js",
+                    "Function": "animTime",
+                    "Type": "script",
+                    "CustomData": "",
+                    "Frequency": 1,
+                    "Inline": 0b,
+                    "Code": ""
+                },
+                {
+                    "Script": "AI/bon.js",
+                    "Function": "respawnTime",
+                    "Type": "script",
+                    "CustomData": "",
+                    "Frequency": 1,
+                    "Inline": 0b,
+                    "Code": ""
+                },
+                {
+                    "Script": "player/ost_breath.js",
+                    "Function": "breath",
+                    "Type": "script",
+                    "CustomData": "",
+                    "Frequency": 1200,
+                    "Inline": 0b,
+                    "Code": ""
+                },
+                {
+                    "Script": "player/ost_breath.js",
+                    "Function": "ost",
+                    "Type": "script",
+                    "CustomData": "",
+                    "Frequency": 3600,
+                    "Inline": 0b,
+                    "Code": ""
+                },
+                {
+                    "Script": "game/ambience.js",
+                    "Function": "",
+                    "Type": "script",
+                    "CustomData": "",
+                    "Frequency": 100,
+                    "Inline": 0b,
+                    "Code": ""
+                }
+            ]
+        },
+        "entity_damaged": {
+            "Blocks": [
+                {
+                    "Script": "AI/itCumming.js",
+                    "Function": "damage",
+                    "Type": "script",
+                    "CustomData": "",
+                    "Frequency": 1,
+                    "Inline": 0b,
+                    "Code": ""
+                },
+                {
+                    "Script": "AI/bon.js",
+                    "Function": "damage",
+                    "Type": "script",
+                    "CustomData": "",
+                    "Frequency": 1,
+                    "Inline": 0b,
+                    "Code": ""
+                }
+            ]
+        },
+        "player_lmb": {
+            "Blocks": [
+            ]
+        },
+        "block_click": {
+            "Blocks": [
+            ]
+        },
+        "block_interact": {
+            "Blocks": [
+            ]
+        },
+        "player_open_gui": {
+            "Blocks": [
+            ]
+        },
+        "player_logout": {
+            "Blocks": [
+                {
+                    "Script": "game/close.js",
+                    "Function": "",
+                    "Type": "script",
+                    "CustomData": "",
+                    "Frequency": 1,
+                    "Inline": 0b,
+                    "Code": ""
+                }
+            ]
+        },
+        "player_rmb": {
+            "Blocks": [
+            ]
+        },
+        "living_jump": {
+            "Blocks": [
+            ]
+        },
+        "player_chat": {
+            "Blocks": [
+            ]
+        },
+        "player_death": {
+            "Blocks": [
+            ]
+        },
+        "player_close_gui": {
+            "Blocks": [
+            ]
+        },
+        "player_open_container": {
+            "Blocks": [
+            ]
+        },
+        "player_close_container": {
+            "Blocks": [
+            ]
+        },
+        "state_changed": {
+            "Blocks": [
+            ]
+        },
+        "mouse_input": {
+            "Blocks": [
+                {
+                    "Script": "player/controls.js",
+                    "Function": "RMB",
+                    "Type": "script",
+                    "CustomData": "",
+                    "Frequency": 1,
+                    "Inline": 0b,
+                    "Code": ""
+                },
+                {
+                    "Script": "player/controls.js",
+                    "Function": "LMB",
+                    "Type": "script",
+                    "CustomData": "",
+                    "Frequency": 1,
+                    "Inline": 0b,
+                    "Code": ""
+                }
+            ]
+        },
+        "server_load": {
+            "Blocks": [
+            ]
+        },
+        "player_respawn": {
+            "Blocks": [
+            ]
+        },
+        "block_place": {
+            "Blocks": [
+            ]
+        },
+        "player_drink": {
+            "Blocks": [
+            ]
+        },
+        "living_knockback": {
+            "Blocks": [
+            ]
+        },
+        "entity_attacked": {
+            "Blocks": [
+            ]
+        },
+        "player_walking": {
+            "Blocks": [
+            ]
+        },
+        "living_equipment_change": {
+            "Blocks": [
+            ]
+        },
+        "player_login": {
+            "Blocks": [
+                {
+                    "Script": "game/open.js",
+                    "Function": "",
+                    "Type": "script",
+                    "CustomData": "",
+                    "Frequency": 1,
+                    "Inline": 0b,
+                    "Code": ""
+                }
+            ]
+        },
+        "player_item_interact": {
+            "Blocks": [
+            ]
+        },
+        "projectile_impact": {
+            "Blocks": [
+            ]
+        },
+        "block_break": {
+            "Blocks": [
+            ]
+        },
+        "living_walking": {
+            "Blocks": [
+            ]
+        },
+        "player_entity_interact": {
+            "Blocks": [
+            ]
+        },
+        "player_item_pickup": {
+            "Blocks": [
+            ]
+        }
+    },
+    "Hotkeys": {
+        "Hotkeys": [
+            {
+                "Trigger": {
+                    "Blocks": [
+                        {
+                            "Script": "player/ui/tutorial.js",
+                            "Function": "",
+                            "Type": "script",
+                            "CustomData": "",
+                            "Frequency": 1,
+                            "Inline": 0b,
+                            "Code": ""
+                        }
+                    ]
+                },
+                "Toggle": 0b,
+                "Keycode": 15,
+                "Enabled": {
+                    "Condition": {
+                    },
+                    "Mode": 1
+                }
+            }
+        ]
+    }
+}
