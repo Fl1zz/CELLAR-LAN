@@ -11,7 +11,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
-F
+
 version = '7.0'
 group = 'com.strangehill.cellar_lan_patcher'
 archivesBaseName = 'cellar_lan_patcher'
