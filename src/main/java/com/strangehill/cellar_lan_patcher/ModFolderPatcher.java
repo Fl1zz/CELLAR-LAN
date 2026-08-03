@@ -57,6 +57,8 @@ public class ModFolderPatcher {
             "scripts/game/cutscenes/last_door.js.json",
             "scripts/game/spawns/doors.js",
             "scripts/game/spawns/doors.js.json",
+            "scripts/game/spawns/doors_new.js",
+            "scripts/game/spawns/doors_new.js.json",
             "scripts/game/spawns/fuseRand.js",
             "scripts/game/spawns/fuseRand.js.json",
             "scripts/player/controls.js",
