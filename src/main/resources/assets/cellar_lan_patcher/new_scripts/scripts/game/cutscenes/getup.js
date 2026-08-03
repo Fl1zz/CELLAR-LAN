@@ -45,12 +45,17 @@ function main(c) {
 
     c.server.states.reset("box")
     c.server.states.reset("doors")
+    
     c.server.executeScript("game/spawns/doors.js")
+    
     c.server.executeScript("game/spawns/fuseRand.js")
     c.server.states.setNumber("doors", 8)
-
+    
     if (c.server.states.has("box")) {
         var boxData = JSON.parse(c.server.states.getString("box"))
+       // c.send("§6[DEBUG] box прочитан: " + JSON.stringify(boxData))
+    } else {
+        c.send("")
     }
 
     c.server.states.setNumber("hp", 2)
@@ -124,7 +129,7 @@ function handler(c) {
         } else {
             for (var p in all_pl){
                 all_pl[p].setupHUD("tab")
-                all_pl[a].setGameMode(2)
+                all_pl[p].setGameMode(2)
             }
         }
     }

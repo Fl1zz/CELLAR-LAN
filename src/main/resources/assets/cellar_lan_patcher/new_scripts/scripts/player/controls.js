@@ -169,18 +169,42 @@ function LMB(c) {
                             c.server.getWorld(0).displayMorph(mappet.createMorph("{Scheme:\"burned_door.particle\",Name:\"snowstorm\"}"), 40, raycast.block.x+0.5, raycast.block.y-0.5, raycast.block.z+0.5)
                             c.server.getWorld(0).playSound("mp.sounds:cellar_sounds.chapter1.misc.door_real"+Math.floor(mappet.random(1, 3))+"", raycast.block.x, raycast.block.y, raycast.block.z, 0.6, 1.8)
                             
-                            if (c.server.states.has("safezone") && c.server.states.has("voice")) {
-                                c.player.states.setString("hand", JSON.stringify(json))
-                                var voice = JSON.parse(c.server.states.getString("voice"))
-                                c.server.states.reset("safezone")
-                                c.server.getWorld(0).spawnNpc("bonnie", -27, 41, 33)
-                                if (!voice.where_am_i) return
-                                voice.where_am_i = false
-                                c.scheduleScript(100, function () {
-                                    c.player.playStaticSound("mp.sounds:cellar_sounds.chapter1.voice.where_am_i", 1.0, 1.0)
-                                })
-                                c.server.states.setString("voice", JSON.stringify(voice))
-                            }
+							if (c.server.states.has("safezone") && c.server.states.has("voice")) {
+								
+								c.player.states.setString("hand", JSON.stringify(json))
+								var voice = JSON.parse(c.server.states.getString("voice"))
+								
+								c.server.states.reset("safezone")
+								
+								c.server.executeScript("game/spawns/doors_new.js")
+
+
+								c.scheduleScript(1, function() {
+									if (c.server.states.has("box")) {
+										var boxData = c.server.states.getString("box")
+										// c.send("" + boxData)
+									} else {
+										c.send("")
+									}
+								})
+
+								c.scheduleScript(3, function() {
+									c.server.getWorld(0).spawnNpc("bonnie", -27, 41, 33)
+
+									var bonnieCheck = c.server.getEntities("@e[mpid=bonnie]")
+								})
+								
+								if (!voice.where_am_i) {
+									return
+								}
+								
+								voice.where_am_i = false
+								
+								c.scheduleScript(100, function () {
+									c.player.playStaticSound("mp.sounds:cellar_sounds.chapter1.voice.where_am_i", 1.0, 1.0)
+								})
+								c.server.states.setString("voice", JSON.stringify(voice))
+							}
                         } else if (block.blockId == "cellar:door_ash_mimic") {
                             const stopVoiceSound = [
                                 "mp.sounds:cellar_sounds.chapter1.voice.whats_happening",
@@ -195,7 +219,8 @@ function LMB(c) {
                             c.server.getWorld(0).setBlock(mappet.createBlockState("cellar:door_ash_blocked", block.meta), raycast.block.x, raycast.block.y, raycast.block.z)
                             c.server.getWorld(0).displayMorph(mappet.createMorph("{Scheme:\"burned_door.particle\",Name:\"snowstorm\"}"), 40, raycast.block.x+0.5, raycast.block.y-0.5, raycast.block.z+0.5)
                             c.server.getWorld(0).playSound("mp.sounds:cellar_sounds.chapter1.misc.door_mimic"+Math.floor(mappet.random(1, 4))+"", raycast.block.x, raycast.block.y, raycast.block.z, 0.4, 1.0)
-
+					
+                            var all_pl = c.getServer().getAllPlayers()
                             for (var i in all_pl){
                                 all_pl[i].getHand(0).setMorph(mappet.createMorph("{Pose:{Pose:{fuseR:{},light:{G:0.85f},Right_Arm:{},photo:{},main_Left:{},main_Right:{},blink:{G:1.0f},camera:{},flashlight:{},Left_Arm:{},fuseL:{}}},Skin:\"c.s:cellar_assets/chapter1/models/player_arm/skins/texture_mimic.png\",Name:\"chameleon.cellar_assets/chapter1/models/player_arm\"}"))
                                 all_pl[i].getHand(0).playAnimation("flashlight_flash_mimic")
